@@ -3,3 +3,9 @@ uvicorn[standard]
 psutil
 prometheus-client
 python-dotenv
+pytest
+pytest-cov
+ruff
+mypy
+types-psutil
+httpx>=0.24

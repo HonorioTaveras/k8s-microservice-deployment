@@ -1,5 +1,7 @@
-import psutil
 from typing import Dict
+
+import psutil
+
 
 def snapshot() -> Dict:
     vm = psutil.virtual_memory()

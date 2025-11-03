@@ -1,5 +1,6 @@
 import os
 
+
 class Settings:
     APP_NAME: str = os.getenv("APP_NAME", "metrics-api")
     APP_ENV: str = os.getenv("APP_ENV", "dev")

@@ -1,5 +1,6 @@
-import time
 import threading
+import time
+
 
 def burn_cpu(seconds: int = 5):
     end = time.time() + seconds
