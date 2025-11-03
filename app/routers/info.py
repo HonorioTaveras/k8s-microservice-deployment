@@ -1,5 +1,7 @@
 from typing import Any, Dict
+
 from fastapi import APIRouter, Query
+
 from app.config import settings
 from app.services import sysstats
 
