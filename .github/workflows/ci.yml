@@ -27,10 +27,22 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Lint
+      - name: Ruff auto-fix
         run: |
-          ruff check app
-          mypy app
+          ruff check app --fix
+          # Optional: show what changed
+          git status --porcelain
+          git diff --patch --minimal -- app || true
+
+      - name: Enforce no uncommitted changes after auto-fix
+        run: |
+          if ! git diff --quiet; then
+            echo "Ruff formatted files. Please run 'ruff check app --fix' locally and commit the changes."
+            exit 1
+          fi
+
+      - name: Type check
+        run: mypy app
 
       - name: Test
         run: |
