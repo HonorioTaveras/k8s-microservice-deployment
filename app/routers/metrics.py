@@ -1,8 +1,8 @@
 from fastapi import APIRouter
 from fastapi.responses import Response
 from prometheus_client import (
-    CollectorRegistry,
     CONTENT_TYPE_LATEST,
+    CollectorRegistry,
     Gauge,
     generate_latest,
 )

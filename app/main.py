@@ -1,6 +1,9 @@
 import logging
+
 from fastapi import FastAPI
+
 from app.routers import info, metrics
+
 
 def create_app() -> FastAPI:
     app = FastAPI(title="metrics-api")
