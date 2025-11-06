@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: metrics-api-config
+data:
+  APP_NAME: "metrics-api"
+  APP_ENV: "dev"
+  LOG_LEVEL: "info"
+  METRICS_NAMESPACE: "metrics_api"
