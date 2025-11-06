@@ -12,6 +12,7 @@ from app.services import sysstats
 
 router = APIRouter()
 
+
 @router.get("/metrics")
 def metrics():
     reg = CollectorRegistry()

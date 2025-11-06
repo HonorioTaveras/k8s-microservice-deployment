@@ -11,12 +11,15 @@ def create_app() -> FastAPI:
     app.include_router(metrics.router)
     return app
 
+
 app = create_app()
 logging.basicConfig(level=logging.INFO)
+
 
 @app.get("/healthz")
 def healthz():
     return {"ok": True}
+
 
 @app.get("/readyz")
 def readyz():

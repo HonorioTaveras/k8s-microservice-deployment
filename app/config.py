@@ -8,4 +8,5 @@ class Settings:
     ENABLE_WORKLOAD: bool = os.getenv("ENABLE_WORKLOAD", "false").lower() == "true"
     METRICS_NAMESPACE: str = os.getenv("METRICS_NAMESPACE", "metrics_api")
 
+
 settings = Settings()
