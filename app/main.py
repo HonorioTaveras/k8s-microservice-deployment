@@ -2,11 +2,12 @@ import logging
 
 from fastapi import FastAPI
 
-from app.routers import info, metrics
+from app.routers import health, info, metrics
 
 
 def create_app() -> FastAPI:
     app = FastAPI(title="metrics-api")
+    app.include_router(health.router)
     app.include_router(info.router)
     app.include_router(metrics.router)
     return app
@@ -14,13 +15,3 @@ def create_app() -> FastAPI:
 
 app = create_app()
 logging.basicConfig(level=logging.INFO)
-
-
-@app.get("/healthz")
-def healthz():
-    return {"ok": True}
-
-
-@app.get("/readyz")
-def readyz():
-    return {"ready": True}

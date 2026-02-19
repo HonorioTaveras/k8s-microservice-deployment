@@ -2,20 +2,24 @@ import threading
 import time
 
 
-def burn_cpu(seconds: int = 5):
+def burn_cpu(seconds: int = 5) -> None:
     end = time.time() + seconds
     x = 0
     while time.time() < end:
         x += 1
 
 
-def allocate_mem(megabytes: int = 50, seconds: int = 5):
+def allocate_mem(megabytes: int = 50, seconds: int = 5) -> None:
     blob = bytearray(megabytes * 1024 * 1024)
     time.sleep(seconds)
     del blob
 
 
-def start_async(cpu_seconds: int = 5, mem_mb: int = 0, mem_seconds: int = 5):
+def start_async(
+    cpu_seconds: int = 5,
+    mem_mb: int = 0,
+    mem_seconds: int = 5,
+) -> int:
     threads = []
     if cpu_seconds > 0:
         threads.append(threading.Thread(target=burn_cpu, args=(cpu_seconds,)))

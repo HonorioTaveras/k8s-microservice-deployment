@@ -1,9 +1,9 @@
-from typing import Dict
+from typing import Any, Dict
 
 import psutil
 
 
-def snapshot() -> Dict:
+def snapshot() -> Dict[str, Any]:
     vm = psutil.virtual_memory()
     disk = psutil.disk_usage("/")
     load1, load5, load15 = psutil.getloadavg()
