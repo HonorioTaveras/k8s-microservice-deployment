@@ -1,0 +1,11 @@
+name: cd-eks
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Placeholder
+        run: echo "EKS deployment steps will be added in Phase 2 of the roadmap."
